@@ -1,0 +1,38 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Hello livreurController!{% endblock %}
+
+{% block body %}
+    <h1>Lise des livreurs</h1>
+    <p><a href="{{ path('add_livreur') }}"type="button" class="btn btn-info">Ajouter un livreur</a></p>
+
+        <table border="1">
+            <thead>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>CIN</th>
+            <th>numero du telephone</th>
+            <th>Livraison</th>
+
+
+            </thead>
+    {% for livreur in livreurs %}
+            <tbody>
+            <td>{{ livreur.id }}</td>
+            <td>{{ livreur.nomLivreur }}</td>
+            <td>{{ livreur.prenomLivreur }}</td>
+            <td>{{ livreur.cin }}</td>
+            <td>{{ livreur.numeroTelephone }}</td>
+            <td>{{ livreur.livraison }}</td>
+
+            <td>
+                <a href="{{ path('modify_livreur',{'id':livreur.id}) }}"type="button" class="btn btn-info">Update</a>
+                <a href="{{ path('delete_livreur',{'id':livreur.id}) }}"type="button" class="btn btn-danger">Delete</a>
+            </td>
+
+            </tbody>
+    {% endfor %}
+        </table>
+
+{% endblock %}

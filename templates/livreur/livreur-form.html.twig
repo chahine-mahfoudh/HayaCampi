@@ -1,0 +1,48 @@
+{% extends "back.html.twig" %}
+{% block titre %} Ajouter un livreur {% endblock %}
+{% block body %}
+
+    <h1>   Ajouter un livreur</h1>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <div class="container">
+        <div class="row">
+            {{ form_start(form_livreur, {
+                'attr': {
+                    'novalidate': 'novalidate',
+                    'class': 'col-lg-5'
+                }
+            })
+            }}
+
+            {{ form_row(form_livreur.nomLivreur) }}
+            {{ form_row(form_livreur.prenomLivreur) }}
+            {{ form_row(form_livreur.cin) }}
+            {{ form_row(form_livreur.numeroTelephone) }}
+            {{ form_row(form_livreur.livraison) }}
+
+
+            <button type="submit" class="btn btn-success">Créer</button>
+            {{ form_end(form_livreur) }}
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    {{ form_start(form_livreur) }}
+    {{ form_widget(form_livreur) }}
+
+
+
+
+    {{ form_end(form_livreur) }}
+
+{% endblock %}

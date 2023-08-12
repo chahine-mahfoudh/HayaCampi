@@ -1,0 +1,30 @@
+{% extends "back.html.twig" %}
+{% block titre %} Ajouter une livraison {% endblock %}
+{% block body %}
+
+    <h1>   Ajouter une livraison</h1>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <div class="container">
+        <div class="row">
+            {{ form_start(form_livraison, {
+                'attr': {
+                    'novalidate': 'novalidate',
+                    'class': 'col-lg-5'
+                }
+            })
+            }}
+
+            {{ form_row(form_livraison.idCommande) }}
+            <button type="submit" class="btn btn-success">Créer</button>
+            {{ form_end(form_livraison) }}
+        </div>
+    </div>
+
+
+
+    {{ form_start(form_livraison) }}
+    {{ form_widget(form_livraison) }}
+
+    {{ form_end(form_livraison) }}
+{% endblock %}

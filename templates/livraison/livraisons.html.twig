@@ -1,0 +1,28 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Hello livraisonController!{% endblock %}
+
+{% block body %}
+    <h1>Liste des livraisons</h1>
+    <p><a href="{{ path('add_livraison') }}"type="button" class="btn btn-info">Ajouter une livraison</a></p>
+
+
+        <table border="1">
+            <thead>
+            <th>ID</th>
+
+            </thead>
+    {% for livraison in livraisons %}
+            <tbody>
+            <td>{{ livraison.id }}</td>
+
+            <td>
+                <a href="{{ path('modify_livraison',{'id':livraison.id}) }}"type="button" class="btn btn-info">Update</a>
+                <a href="{{ path('delete_livraison',{'id':livraison.id}) }}"type="button" class="btn btn-danger">Delete</a>
+            </td>
+
+            </tbody>
+    {% endfor %}
+        </table>
+
+{% endblock %}
