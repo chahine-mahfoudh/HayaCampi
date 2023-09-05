@@ -40,11 +40,13 @@ class LivreurController extends AbstractController
             return $this->redirectToRoute("livreurs");
         }
 
+
         return $this->render("livreur/livreur-form.html.twig", [
             "form_title" => "Ajouter un livreur",
             "form_livreur" => $form->createView(),
         ]);
     }
+
 
 
     /**
@@ -65,11 +67,13 @@ class LivreurController extends AbstractController
 
         }
 
+
         return $this->render("livreur/livreur-form.html.twig", [
             "form_title" => "Modifier une livreur",
             "form_livreur" => $form->createView(),
         ]);
     }
+
 
 
 
@@ -86,6 +90,7 @@ class LivreurController extends AbstractController
         ]);
     }
 
+    
 
     /**
      * @Route("/delete-livreur/{id}", name="delete_livreur")
