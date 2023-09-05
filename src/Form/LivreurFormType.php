@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class LivreurFormType extends AbstractType
 {
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -26,4 +27,5 @@ class LivreurFormType extends AbstractType
             'data_class' => Livreur::class,
         ]);
     }
+    
 }
